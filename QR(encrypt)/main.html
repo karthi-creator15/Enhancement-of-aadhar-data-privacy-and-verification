@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR and Manual Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('photo1.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #2575fc;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1a56d3;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .note {
+            font-size: 16px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Select Mode</h1>
+
+    <!-- OCR Mode Button -->
+    <a href="jaga.html" class="btn">OCR Mode</a>
+
+    <!-- Manual Mode Button -->
+    <a href="index.php" class="btn">Manual Mode</a>
+
+    <p class="note">Choose one of the modes to proceed with.</p>
+</div>
+
+</body>
+</html>

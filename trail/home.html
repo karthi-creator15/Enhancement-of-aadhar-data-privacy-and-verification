@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('logo.jpeg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(246, 237, 237, 0.781); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 100%;
+            backdrop-filter: blur(10px); /* Adds a blur effect */
+        }
+        h2 {
+            text-align: center;
+            color: rgb(14, 14, 14);
+        }
+        .instruction {
+            background: rgba(255, 223, 186, 0.7); /* Light transparent warning color */
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: rgb(6, 6, 6);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            color: black;
+        }
+        .upload-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+        }
+        .upload-container label {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0;
+            font-size: 14px;
+        }
+        .upload-container label:hover {
+            background: #0056b3;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #aadhaarFile {
+            display: none;
+        }
+        .file-name {
+            font-size: 14px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>College Admission Form</h2>
+
+        <!-- Aadhaar Upload Instruction -->
+        <div class="instruction">
+            Please upload your Aadhaar QR Code .
+        </div>
+
+        <form id="admissionForm">
+            <label>Aadhaar QR Code </label>
+            <button type="button" class="upload-container" onclick="window.location.href='decrypt.php';">
+                Click here to upload Aadhaar
+            </button>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="course">Select Course</label>
+            <select id="course" name="course" required>
+                <option value="">Select</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+            </select>
+
+            <label for="marks">12th Grade Marks (%)</label>
+            <input type="number" id="marks" name="marks" min="0" max="100" required>
+
+            <label for="photo">Upload Photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <label for="documents">Upload Documents (PDF)</label>
+            <input type="file" id="documents" name="documents" accept=".pdf" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let aadhaarFile = document.getElementById("aadhaarFile").files[0];
+
+            // Validate Name
+            if (name.trim() === "") {
+                alert("Please enter your full name.");
+                event.preventDefault();
+                return;
+            }
+
+            // Validate Email
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email.");
+                event.preventDefault();
+                return;
+            }
+
+            // Validate Phone Number
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Phone number must be 10 digits.");
+                event.preventDefault();
+                return;
+            }
+
+            // Validate Aadhaar File (PNG only)
+            if (!aadhaarFile || !aadhaarFile.name.endsWith(".png")) {
+                alert("Please upload a valid Aadhaar QR Code image (PNG format only).");
+                event.preventDefault();
+                return;
+            }
+
+            alert("Application Submitted Successfully!");
+        });
+
+        // Update file name when Aadhaar file is selected
+        document.getElementById("aadhaarFile").addEventListener("change", function(event) {
+            let fileName = event.target.files[0] ? event.target.files[0].name : "No file selected";
+            document.querySelector(".file-name").textContent = fileName;
+        });
+    </script>
+</body>
+</html>take it as maind

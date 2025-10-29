@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Institute Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: #1f75cb; 
+            background-image: url('logo.jpeg'); 
+            background-size: cover; 
+            background-position: center;
+        }
+        .navbar { background: #002147; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); height: 80px; }
+        .navbar h1 { margin: 0; font-size: 24px; }
+        .navbar ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 20px; }
+        .navbar ul li { display: inline; }
+        .navbar ul li a { color: white; text-decoration: none; font-weight: bold; transition: color 0.3s ease-in-out; }
+        .navbar ul li a:hover { color: #ffcc00; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo { height: 60px; }
+        .marquee-container { position: fixed; top: 80px; width: 100%; background: #ffcc00; color: black; padding: 10px; font-weight: bold; text-align: center; z-index: 999; font-size: 18px; height: 50px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        marquee { width: 100%; white-space: nowrap; }
+        .content { margin-top: 150px; padding: 20px; }
+        .section { padding: 100px 20px; text-align: center; transition: transform 0.3s ease-in-out, background 0.5s ease-in-out; border-radius: 10px; margin: 20px auto; width: 80%; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); background: rgba(255, 255, 255, 0.7); }
+        .section:hover { transform: scale(1.05); background: rgba(255, 255, 255, 0.9); }
+        footer { background: #002147; color: white; text-align: center; padding: 15px; margin-top: 30px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="Institute Logo" class="logo">
+            <div>
+                <h1>National Institute technology </h1>
+                <p style="font-size: 11px; color: white;">Attempted to provide you an easy and single point access to information about several welfare schemes of the Government</p>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left">🔔 Important Announcement: National ID Registration Deadline Extended! <a href="#aadhaar">Apply</a> 🔔</marquee>
+    </div>
+    
+    <div class="content">
+        <section id="home" class="section">
+            <img src="home_icon.png" alt="Home Icon" height="80">
+            <h2>Welcome to the National Institute Portal</h2>
+            <p>t is my absolute honor and pleasure to extend a warm welcome to all of you to [Event Name], hosted here at [National Institute of Technology, City Name]. We are delighted to have such an esteemed gathering of students, faculty, researchers, and distinguished guests joining us today.
+
+                At NIT [Name], we take immense pride in fostering innovation, knowledge, and excellence. This institution has been a beacon of technical education, producing some of the finest engineers, researchers, and leaders who have contributed to the progress of our nation and beyond..</p>
+                <img src="mm.png" alt="Welcome Image" width="500">
+        </section>
+
+        <section id="departments" class="section">
+            <img src="departments_icon.png" alt="Departments Icon" height="50">
+            <h2>Institute Departments</h2>
+            <ul>
+                <li>Department of Science & Research</li>
+                <li>Department of Engineering & Technology</li>
+                <li>Department of Arts & Humanities</li>
+                <li>Student Welfare & Administration</li>
+            </ul>
+        </section>
+
+        <section id="services" class="section">
+            <img src="services_icon.png" alt="Services Icon" height="50">
+            <h2>Institute Services</h2>
+            <ul>
+                <li>Apply for Admissions</li>
+                <li>Online Examination Portal</li>
+                <li>Student Grievance Redressal</li>
+                <li>Library & Research Resources</li>
+            </ul>
+        </section>
+        <section id="aadhaar" class="section">
+            <img src="pp.png" alt="Aadhaar Icon" height="50">
+            <h2>Admission Form</Form></h2>
+            <p>"It is my absolute honor and pleasure to extend a warm welcome to all of you to [Event Name], hosted here at [National Institute of Technology, City Name]. We are delighted to have such an esteemed gathering of students, faculty, researchers, and distinguished guests joining us today.
+
+                To ensure a smooth and engaging experience, we encourage all participants to complete their registration process at the earliest. The registration desk is available at [location], or you can register online through our official portal. Your registration grants you access to insightful sessions, networking opportunities, and valuable resources that this event has to offer.</p>
+            <button onclick="location.href='home.html';" style="padding: 10px 20px; font-size: 16px; border: none; background: #002147; color: white; border-radius: 5px; cursor: pointer;">
+                click to apply
+            </button>            
+        </section>
+        
+        <section id="contact" class="section">
+            <img src="contact_icon.png" alt="Contact Icon" height="50">
+            <h2>Contact Us</h2>
+            <p>Email: support@instituteportal.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Institute St, Capital City</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 National Institute Portal. All Rights Reserved.</p>
+        <p>Indian Government, at all levels, announces Welfare Schemes for a cross section of the society from time to time in light world.</p>
+        <img src="pp.png" alt="Welcome Image" width="70">
+        <img src="home_icon.png" alt="Welcome Image" width="70">
+        <img src="pp.png" alt="Welcome Image" width="70">
+        <p>Email: support@instituteportal.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Institute St, Capital City</p>
+
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".section");
+            window.addEventListener("scroll", () => {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        section.style.background = "rgba(255, 255, 255, 0.9)";
+                    } else {
+                        section.style.background = "rgba(255, 255, 255, 0.7)";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

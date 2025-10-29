@@ -1,0 +1,9 @@
+CREATE TABLE user_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    gender VARCHAR(50) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    aadhaar VARCHAR(255) NOT NULL,
+    pan VARCHAR(255) NOT NULL,
+    ration VARCHAR(255) NOT NULL
+);
